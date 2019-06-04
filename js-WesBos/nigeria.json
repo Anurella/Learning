@@ -1,0 +1,219 @@
+[
+    {
+        "state": "Kano",
+        "capital" : "Kano" ,
+        "population": "9401288",
+        "rank": "1"
+    },
+	{
+        "state": "Lagos",
+        "capital" : "Ikeja" ,
+        "population": "9113605",
+        "rank": "2"
+    },
+	{
+        "state": "Kaduna",
+        "capital" : "Kaduna" ,
+        "population": "6113503",
+        "rank": "3"
+    },
+	{
+        "state": "Katsina",
+        "capital" : "Katsina" ,
+        "population": "5801584",
+        "rank": "4"
+    },
+    {
+        "state":"Oyo",
+        "capital" :"Ibadan" ,
+        "population":"5591589",
+        "rank": "5"
+    },
+	{
+        "state": "Rivers",
+        "capital" : "Port-Harcourt" ,
+        "population": "5185400",
+        "rank": "6"
+    },
+	{
+        "state":"Bauchi",
+        "capital":"Bauchi" ,
+        "population": "4676465",
+        "rank": "7"
+    },
+	{
+        "state": "Jigawa",
+        "capital" : "Dutse" ,
+        "population": "4361002",
+        "rank": "8"
+    },
+	{
+        "state": "Benue",
+        "capital" : "Markurdi" ,
+        "population": "4219244",
+        "rank": "9"
+    },
+	{
+        "state": "Anambra",
+        "capital" : "Awka" ,
+        "population": "4182032",
+        "rank": "10"
+    },
+	{
+        "state": "Borno",
+        "capital" : "Maiduguri" ,
+        "population": "4171104",
+        "rank": "11",
+    },
+	{
+        "state": "Delta",
+        "capital" : "Asaba" ,
+        "population": "4098391",
+        "rank": "12",
+    },
+	{
+        "state": "Niger",
+        "capital" : "Minna" ,
+        "population": "3954772",
+        "rank": "13"
+    },
+	{
+        "state": "Imo",
+        "capital" : "Owerri" ,
+        "population": "3934899",
+        "rank": "14"
+    },
+	{
+        "state": "Akwa Ibom",
+        "capital" : "Uyo" ,
+        "population": "3920208",
+        "rank": "15"
+    },
+	{
+        "state": "Ogun",
+        "capital" : "Abeokuta" ,
+        "population": "3728098",
+        "rank": "16"
+    },
+	{
+        "state": "Sokoto",
+        "capital" : "Sokoto" ,
+        "population": "3696699",
+        "rank": "17"
+    },
+	{
+        "state": "Ondo",
+        "capital" : "Akure" ,
+        "population": "3441024",
+        "rank": "18"
+    },
+	{
+        "state": "Osun",
+        "capital" : "Osogbo" ,
+        "population": "3423535",
+        "rank": "19",
+    },
+	{
+        "state": "Kogi",
+        "capital" : "Lokoja" ,
+        "population": "3278487",
+        "rank": "20"
+    },
+	{
+        "state": "Zamfara",
+        "capital" : "Gusau" ,
+        "population": "3259846",
+        "rank": "21"
+    },
+	{
+        "state": "Enugu",
+        "capital" : "Enugu" ,
+        "population": "3257298",
+        "rank": "22"
+    },
+	{
+        "state": "Kebbi",
+        "capital" : "Birnin-Kebbi" ,
+        "population": "3238628",
+        "rank": "23"
+    },
+	{
+        "state": "Edo",
+        "capital" : "Benin",
+        "population": "3218332",
+        "rank": "24"
+    },
+	{
+        "state": "Plateau",
+        "capital" : "Jos",
+        "population": "3178712",
+        "rank": "25"
+    },
+	{
+        "state": "Adamawa",
+        "capital" : "Yola",
+        "population": "3168101",
+        "rank": "26"
+    },
+	{
+        "state": "Cross River",
+        "capital" : "Calabar",
+        "population": "2888966",
+        "rank": "27"
+    },
+	{
+        "state": "Abia",
+        "capital" : "Umuahia",
+        "population": "2833999",
+        "rank": "28"
+    },
+	{
+        "state": "Ekiti",
+        "capital" : "Ekiti",
+        "population": "2384212",
+        "rank": "29"
+    },
+	{
+        "state": "Kwara",
+        "capital" : "Ilorin",
+        "population": "2371089",
+        "rank": "30"
+    },
+	{
+        "state": "Gombe",
+        "capital" : "Gombe",
+        "population": "2353879",
+        "rank": "31"
+    },
+	{
+        "state": "Yobe",
+        "capital" : "Damaturu",
+        "population": "2321591",
+        "rank": "32",
+    },
+	{
+        "state": "Taraba",
+        "capital" : "Jalingo",
+        "population": "2300736",
+        "rank": "33"
+    },
+	{
+        "state": "Ebonyi",
+        "capital" : "Abakaliki",
+        "population": "2173501",
+        "rank": "34"
+    },
+	{
+        "state": "Nasarawa",
+        "capital" : "Lafia",
+        "population": "1863275",
+        "rank": "35"
+    },
+	{
+        "state": "Bayelsa",
+        "capital" : "Yenagoa",
+        "population": "1703358",
+        "rank": "36"
+    }
+
+]

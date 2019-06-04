@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> DAY 5 | Flex Panel Gallery 06 /11/2018 </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="day5">
+
+        <div class="container">
+            <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS  DAY 5 </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day4.html"> PREV &nbsp;&nbsp;&nbsp; </a>
+                    <a href="day6.html"> NEXT </a>
+                </div>
+            </header>
+
+            <main>
+
+                <h3 style="text-align: center; margin-bottom:1em;"> Flex Panel Gallery , <em> Click on Image</em></h3>
+
+                <div class="panels">
+                    <div class="panel panel1">
+                        <p> Hey </p>
+                        <p> Let's </p>
+                        <p> Dance </p>
+                    </div>
+                    <div class="panel panel2">
+                        <p> Give </p>
+                        <p> Take </p>
+                        <p> Receive </p>
+                    </div>
+                    <div class="panel panel3">
+                        <p> Give </p>
+                        <p> All </p>
+                        <p>You can </p>
+                    </div>
+                    <div class="panel panel4">
+                        <p> Experience </p>
+                        <p> It </p>
+                        <p> Today </p>
+                    </div>
+                    <div class="panel panel5">
+                        <p> Life </p>
+                        <p> In </p>
+                        <p> Motion </p>
+                    </div>
+
+                </div>
+
+            </main>
+
+
+        </div>
+
+        <script>
+
+            const panels = document.querySelectorAll('.panel');
+
+            function toggleOpen() {
+                this.classList.toggle('open');
+            }
+
+            function toggleActive(e) {
+
+               if(e.propertyName.includes('flex')) {
+                      this.classList.toggle('open-active');
+               }
+            }
+
+            panels.forEach( panel => panel.addEventListener('click',toggleOpen ));
+            panels.forEach( panel => panel.addEventListener('transitionend',toggleActive ));
+        </script>
+    </body>
+</html>

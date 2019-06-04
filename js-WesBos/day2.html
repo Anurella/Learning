@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Clock + js by Wes Bos Javascript 30 class">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> DAY2 - CSS + JS Clock (16/10/2018) </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="author" href="">
+    </head>
+
+
+
+    <body>
+
+        <div class="container container__2">
+
+             <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS  DAY 2 </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day1.html"> PREV &nbsp;&nbsp;&nbsp; </a>
+                    <a href="day3.html"> NEXT </a>
+                </div>
+            </header>
+
+
+            <main>
+                <div class="clock">
+                    <div class="clockface">
+                          <h5><i class="fas fa-praying-hands" aria-hidden="true"></i></h5>
+                          <h5> give</h5>
+                          <h5>a</h5>
+                          <h5><i class="fas fa-smile-beam"></i></h5>
+                          <h5>show</h5>
+                          <h5> some </h5>
+                          <h5><i class="fas fa-heart" aria-hidden="true"></i></h5>
+                          <h5>take</h5>
+                          <h5>a</h5>
+                          <h5><i class="fas fa-shower" aria-hidden="true"></i></h5>
+                          <h5>say</h5>
+                          <h5>a</h5>
+                        <div class="hand hour__hand"></div>
+                        <div class="hand min__hand"></div>
+                        <div class="hand second__hand"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+
+        <script>
+
+             const secondHand = document.querySelector('.second__hand');
+             const minuteHand = document.querySelector('.min__hand');
+             const hourHand = document.querySelector('.hour__hand');
+
+             function setDate(){
+                // get current date
+                 const present = new Date();
+                //get second
+                 const seconds = present.getSeconds();
+                 // convert seconds to a degree
+                 const secondsDegrees = (seconds / 60 ) * 360;
+                 //set secondhand to the degree value
+                 secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+                 //set minutes
+                 const minutes = present.getMinutes();
+                 const minutesDegrees = (minutes / 60 ) * 360;
+                 minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+                 const hours = present.getHours();
+                 const hoursDegrees = (hours / 12) * 360;
+                 hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+             }
+
+             //run every second
+             setInterval(setDate, 1000);
+
+
+            // const hour, min, sec;
+
+
+        </script>
+    </body>
+</html>

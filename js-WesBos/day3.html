@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Clock + js by Wes Bos Javascript 30 class">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> DAY2 - CSS + JS Clock (17/10/2018)  </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="author" href="">
+    </head>
+
+
+    <body>
+        <div class="container">
+
+            <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS  DAY 3 </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day2.html"> PREV &nbsp;&nbsp;&nbsp; </a>
+                    <a href="day4.html"> NEXT </a>
+                </div>
+            </header>
+
+            <main class="main__day3">
+
+                <h3> Update CSS Varaibles with <span class="hl"> JS</span></h3>
+
+                <div class="controls">
+                    <label for="spacing"> Spacing: </label>
+                    <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+                    <label for="blur"> Blur: </label>
+                    <input type="range" name="blur" min="10" max="200" value="1" data-sizing="px">
+
+                    <label for="base"> Base Color </label>
+                    <input type="color" name="base" value="#1ab394">
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1531583044854-c6b7d8490ecf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ca322b5688d4615d4adb1107fd5c0ad&auto=format&fit=crop&w=751&q=80" alt="Image from Unsplash" class="img__day3">
+
+            </main>
+        </div>
+
+        <script>
+
+            //nodelist of inputs
+            const inputs = document.querySelectorAll('.controls input');
+
+
+            function handleUpdate(){
+                // dataset is an object that shows all the data-attributes associated with an element
+
+                 const suffix = this.dataset.sizing || '';
+                 // change the variable in css
+                 document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
+            }
+
+            inputs.forEach( input => input.addEventListener('change', handleUpdate));
+            inputs.forEach( input => input.addEventListener('mousemove', handleUpdate));
+
+        </script>
+
+    </body>
+</html>

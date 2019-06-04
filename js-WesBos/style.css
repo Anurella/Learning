@@ -1,0 +1,604 @@
+/* STYLES FOR JAVASCRIPT30 */
+
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
+
+/* GENERAL  */
+/* learning to use :root and css variables; */
+
+:root {
+
+    position: relative;
+    --letter-color: purple;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    font: 16px/22px 'Charmonman', cursive;
+    color: white;
+    height: 100vh;
+    word-spacing:.2em;
+    background: url('img/day1.jpg') no-repeat center center/cover;
+}
+
+a {
+    text-decoration: none;
+    color: #bada55;
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+/* DAY 1 */
+
+.container {
+
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+header {
+
+    width: 100%;
+    webkit-display: flex;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+
+
+
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title h4 {
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.title p {
+    margin: .8rem 0;
+}
+
+main {
+    width: 100%;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+.keys {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 4vh;
+    justify-content: center;
+}
+
+.key {
+
+    border: 4px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: .5em;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.15s;
+    text-shadow: 0 0 5px black;
+    padding: 1rem .5rem;
+    width: 100px;
+    margin: .5rem;
+}
+
+kbd {
+
+    color: white;
+    color: var(--letter-color);
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: .7rem;
+}
+
+.playing {
+
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
+
+.sound {
+
+    font-size: 1rem;
+    display: block;
+    text-transform: uppercase;
+    color: #fdb500;
+}
+
+
+
+
+/****************
+ DAY 2 clock face
+ ***************/
+
+.day__2 {
+
+    /* light sea green, platinum, rusty red, yankees blue, tango pink*/
+    /*background: linear-gradient(#1ab394 0%, #dee5e5 0%, #ef767a 35%, #102542 55%, #d62839 5%);*/
+
+}
+
+.container--2 {
+
+    font-size: 10px;
+    font-size: 2rem;
+    padding: 2em;
+
+
+}
+
+.clock {
+
+    width: 280px;
+    height: 280px;
+    border: 10px solid #ef767a;
+    border-radius: 50%;
+    margin: 30px auto;
+    position: relative;
+    padding: 1rem;
+    /*@box-shadow: horizontal vertical blur spread color */
+    box-shadow:
+        0 0 0px 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #1ab394,
+        inset 0 0 10px #000,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.clockface {
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateY(-3px);
+}
+
+
+.clockface h5 {
+
+    position: absolute;
+    font-size: 1rem;
+}
+
+.clockface h5:nth-child(1) {
+    top: 0;
+    left: 104px;
+}
+
+.clockface h5:nth-child(2) {
+    top: 25px;
+    right: 35px;
+}
+
+.clockface h5:nth-child(3) {
+    top: 63px;
+    right: 6px;
+}
+
+.clockface h5:nth-child(4) {
+    top: 106px;
+    right: 6px;
+}
+
+.clockface h5:nth-child(5) {
+
+    top: 148px;
+    right: 6px;
+
+}
+
+.clockface h5:nth-child(6) {
+    top: 188px;
+    right: 35px;
+}
+
+.clockface h5:nth-child(7) {
+    bottom: 0;
+    left: 106px;
+
+}
+
+.clockface h5:nth-child(8) {
+
+    top: 188px;
+    left: 35px;
+
+}
+
+.clockface h5:nth-child(9) {
+    top: 148px;
+    left: 6px;
+}
+
+.clockface h5:nth-child(10) {
+    top: 105px;
+    left: 6px;
+}
+
+.clockface h5:nth-child(11) {
+    top: 63px;
+    left: 6px;
+
+}
+
+.clockface h5:nth-child(12) {
+    top: 25px;
+    left: 35px;
+}
+
+
+.hand {
+
+
+    background-color: #dee5e5;
+    position: absolute;
+    left: 50%;
+    /*center left ( clock moves right to left)*/
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    /*transition: all 0.05s;*/
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    /*transform: rotate(90deg);*/
+
+}
+
+/* height + top = 50%*/
+
+.hour__hand {
+    width: 3px;
+    height: 20%;
+    top: 30%;
+    margin-left: -1.5px;
+}
+
+.min__hand {
+    width: 2px;
+    height: 25%;
+    top: 25%;
+    margin-left: -1px;
+}
+
+.second__hand {
+    width: 1px;
+    height: 35%;
+    top: 15%;
+    margin-left: -0.5px;
+}
+
+
+/*******
+DAY 3 CSS Varaibles
+*******/
+
+
+:root{
+
+    --base:#1ab394;
+    --spacing: 20px;
+    --blur:1px;
+
+
+}
+
+.main__day3 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__day3 h3 {
+
+    font-size:1.4rem;
+    margin-bottom: .5rem;
+
+}
+
+.hl {
+
+    /*color:#102542;*/
+color:var(--base);
+}
+
+.controls {
+    margin-top:10px;
+    margin-bottom: 50px;
+}
+
+label {
+
+    font-size:.9rem;
+    text-transform: capitalize;
+}
+
+input {
+
+   margin-right:1em;
+}
+
+[type="range"] {
+
+    width:60px;
+    vertical-align: bottom;
+
+}
+
+.img__day3 {
+
+    width:500px;
+    margin-bottom: var(--spacing);
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+
+/**********
+DAY 5
+********/
+
+.day5 header {
+    padding-bottom: 0;
+}
+
+
+.panels {
+
+    min-height:75vh;
+    overflow: hidden;
+    display:flex;
+     font-size:10px;
+
+}
+
+.panel {
+
+
+    background:#102542;
+    /*box-shadow: inset 0 0 0 5px;*/
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition:
+        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        background 0.2s;
+        font-size: 20px;
+        background-size: cover;
+        background-position: center;
+        /*flex room*/
+        flex:1;
+        align-items: center;
+        justify-content: center;
+        display:flex;
+        flex-direction: column;
+         position: relative;
+         font-size:10px;
+
+}
+
+
+.panel1 {
+
+    background: url("https://images.unsplash.com/photo-1541283130215-921d751fe2d9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7dfeb3a5afd0b6b2e3d3179280f0840e&auto=format&fit=crop&w=934&q=80") bottom center/cover;
+    background-repeat: no-repeat;
+}
+
+.panel2 {
+   background: url('https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-0.3.5&s=d3c2446192f154ace365cc554f1c3e8e&auto=format&fit=crop&w=934&q=80') no-repeat center / cover;
+}
+
+.panel3 {
+
+
+   background: url('https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed17683f2c514eed2ab025ff59b1e3b8&auto=format&fit=crop&w=800&q=60') no-repeat center / cover;
+}
+
+.panel:after{
+    content: '';
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-image:linear-gradient(to bottom,#000,#000);
+    opacity:0.2;
+}
+
+.panel5{
+    background: url('https://images.unsplash.com/photo-1470298609667-dcd85581b096?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7b354604e35efeb84713f98d27b57259&auto=format&fit=crop&w=800&q=60') no-repeat center/ cover;
+}
+
+.panel4{
+    background: url('https://images.unsplash.com/photo-1504257365157-1496a50d48f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd9045b6436e90624f908f6ede529f97&auto=format&fit=crop&w=750&q=80') no-repeat left center/cover;
+}
+/*flex children*/
+
+.panel > * {
+
+    margin:0;
+    width:100%;
+    transition:transform 0.5s;
+    /* this will make the items occupy equal space*/
+    flex:1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel > *:first-child { transform: translateY(-100%); }
+.panel.open-active > *:first-child { transform: translateY(0); }
+.panel > *:last-child{ transform: translateY(100%); }
+.panel.open-active > *:last-child { transform: translateY(0); }
+
+.panel p {
+    text-transform: uppercase;
+    text-shadow: 0 0 4px rgba(0,0,0,0.72), 0 0 14px rgba(0,0,0,0.45)
+    font-size:2em;
+}
+
+.panel p:nth-child(2) {
+    font-size:4em;
+}
+
+.panel.open{
+
+   flex:5;
+   font-size:30px;
+}
+
+.cta {
+
+    color:white;
+    text-decoration: none;
+
+}
+
+/*******
+Day 6
+*********/
+
+.day6 {
+
+    background-color:#d62839;
+    height:100;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    font-size:16px;
+
+}
+
+input {
+
+    width:100%;
+    padding:20px;
+}
+
+.search-form {
+
+    max-width: 350px;
+    margin: 50px auto;
+}
+
+   input.search {
+      margin: 0;
+      text-align: center;
+      outline: 0;
+      border: 10px solid #F7F7F7;
+      width: 120%;
+      left: -10%;
+      position: relative;
+      top: 10px;
+      z-index: 2;
+      border-radius: 5px;
+      font-size: 40px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+ .suggestions {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      /*perspective: 20px;*/
+}
+
+    .suggestions li {
+      background: white;
+      list-style: none;
+      border-bottom: 1px solid #D8D8D8;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      display: flex;
+      justify-content: space-between;
+      text-transform: capitalize;
+      color:#000;
+}
+
+   .suggestions li:nth-child(even) {
+      transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+      background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+}
+
+
+    .suggestions li:nth-child(odd) {
+      transform: perspective(100px) rotateX(-3deg) translateY(3px);
+      background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+}
+
+.hgl {
+
+     background-color:#1ab394;
+     display:inline-block;
+
+}
+
+
+canvas {
+
+   background-color: #fff;
+}
+
+
+
+/*jsIssue Tracker*/
+.jumbotron {
+    background-color: #0a0b0c4d;
+}
+
+small {
+
+    font-size:40%;
+}

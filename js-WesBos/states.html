@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Anurella">
+        <title> Nigerian States and Capitals </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charmonman" />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html,body {
+                margin:0;
+                padding:0;
+                width:100%;
+                height:100%;
+            }
+
+            body{
+                background-color: rgba(0,255,0,.5);
+                 font: 16px/22px 'Charmonman', cursive;
+            }
+
+            .container {
+
+                -webkit-display:flex;
+                display: flex;
+                flex-direction:column;
+                align-items:center;
+            }
+
+            header{
+                text-align:center;
+                padding-top:2em;
+            }
+
+            header h3 {
+                margin-bottom:0;
+            }
+
+            header p {
+                margin-top:0;
+            }
+            input {
+
+    width:100%;
+    padding:20px;
+}
+
+.search-form {
+
+    max-width:300px;
+    margin:0 auto 50px ;
+}
+
+   input.search {
+      margin: 0;
+      text-align: center;
+      outline: 0;
+      border: 10px solid #F7F7F7;
+      width: 115%;
+      left: -8%;
+      position: relative;
+      top: 10px;
+      z-index: 2;
+      border-radius: 5px;
+      font-size:30px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+ .suggestions {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      /*perspective: 20px;*/
+}
+
+    .suggestions li {
+
+      background: white;
+      list-style: none;
+      border-bottom: 1px solid #D8D8D8;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      display: flex;
+      justify-content: space-between;
+      text-transform: capitalize;
+      color:#000;
+}
+
+   .suggestions li:nth-child(even) {
+      transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+      background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+}
+
+
+    .suggestions li:nth-child(odd) {
+      transform: perspective(100px) rotateX(-3deg) translateY(3px);
+      background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+}
+
+.hgl {
+
+     background-color:#1ab394;
+     display:inline-block;
+
+}
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <h3> STATES IN NIGERIA WITH POPULATION CENSUS AND RANK </h3>
+                <p> Last Census in Nigeria was in 2006 </p>
+                <p> made with &#x1F493; by Anurella </p>
+            </header>
+            <main>
+                <form class="search-form">
+                    <input type="text" class="search" name="" placeholder="State or Capital">
+                    <ul class="suggestions">
+                        <li> Filter for a state </li>
+                        <li> or its capital </li>
+                    </ul>
+                </form>
+            </main>
+        </div>
+        <script>
+        //get a json file of states
+        const endPoint = 'https://gist.githubusercontent.com/Anurella/9d985779e28ee953e4f2f275e25f25a4/raw/e0ed44e38c2a501be2e834805494acb0aeea6519/nigeriaStates.json';
+
+        const states = [{
+                "state": "Kano",
+                "capital": "Kano",
+                "population": "9401288",
+                "rank": "1"
+            },
+            {
+                "state": "Lagos",
+                "capital": "Ikeja",
+                "population": "9113605",
+                "rank": "2"
+            },
+            {
+                "state": "Kaduna",
+                "capital": "Kaduna",
+                "population": "6113503",
+                "rank": "3"
+            },
+            {
+                "state": "Katsina",
+                "capital": "Katsina",
+                "population": "5801584",
+                "rank": "4"
+            },
+            {
+                "state": "Oyo",
+                "capital": "Ibadan",
+                "population": "5591589",
+                "rank": "5"
+            },
+            {
+                "state": "Rivers",
+                "capital": "Port-Harcourt",
+                "population": "5185400",
+                "rank": "6"
+            },
+            {
+                "state": "Bauchi",
+                "capital": "Bauchi",
+                "population": "4676465",
+                "rank": "7"
+            },
+            {
+                "state": "Jigawa",
+                "capital": "Dutse",
+                "population": "4361002",
+                "rank": "8"
+            },
+            {
+                "state": "Benue",
+                "capital": "Markurdi",
+                "population": "4219244",
+                "rank": "9"
+            },
+            {
+                "state": "Anambra",
+                "capital": "Awka",
+                "population": "4182032",
+                "rank": "10"
+            },
+            {
+                "state": "Borno",
+                "capital": "Maiduguri",
+                "population": "4171104",
+                "rank": "11",
+            },
+            {
+                "state": "Delta",
+                "capital": "Asaba",
+                "population": "4098391",
+                "rank": "12",
+            },
+            {
+                "state": "Niger",
+                "capital": "Minna",
+                "population": "3954772",
+                "rank": "13"
+            },
+            {
+                "state": "Imo",
+                "capital": "Owerri",
+                "population": "3934899",
+                "rank": "14"
+            },
+            {
+                "state": "Akwa Ibom",
+                "capital": "Uyo",
+                "population": "3920208",
+                "rank": "15"
+            },
+            {
+                "state": "Ogun",
+                "capital": "Abeokuta",
+                "population": "3728098",
+                "rank": "16"
+            },
+            {
+                "state": "Sokoto",
+                "capital": "Sokoto",
+                "population": "3696699",
+                "rank": "17"
+            },
+            {
+                "state": "Ondo",
+                "capital": "Akure",
+                "population": "3441024",
+                "rank": "18"
+            },
+            {
+                "state": "Osun",
+                "capital": "Osogbo",
+                "population": "3423535",
+                "rank": "19",
+            },
+            {
+                "state": "Kogi",
+                "capital": "Lokoja",
+                "population": "3278487",
+                "rank": "20"
+            },
+            {
+                "state": "Zamfara",
+                "capital": "Gusau",
+                "population": "3259846",
+                "rank": "21"
+            },
+            {
+                "state": "Enugu",
+                "capital": "Enugu",
+                "population": "3257298",
+                "rank": "22"
+            },
+            {
+                "state": "Kebbi",
+                "capital": "Birnin-Kebbi",
+                "population": "3238628",
+                "rank": "23"
+            },
+            {
+                "state": "Edo",
+                "capital": "Benin",
+                "population": "3218332",
+                "rank": "24"
+            },
+            {
+                "state": "Plateau",
+                "capital": "Jos",
+                "population": "3178712",
+                "rank": "25"
+            },
+            {
+                "state": "Adamawa",
+                "capital": "Yola",
+                "population": "3168101",
+                "rank": "26"
+            },
+            {
+                "state": "Cross River",
+                "capital": "Calabar",
+                "population": "2888966",
+                "rank": "27"
+            },
+            {
+                "state": "Abia",
+                "capital": "Umuahia",
+                "population": "2833999",
+                "rank": "28"
+            },
+            {
+                "state": "Ekiti",
+                "capital": "Ekiti",
+                "population": "2384212",
+                "rank": "29"
+            },
+            {
+                "state": "Kwara",
+                "capital": "Ilorin",
+                "population": "2371089",
+                "rank": "30"
+            },
+            {
+                "state": "Gombe",
+                "capital": "Gombe",
+                "population": "2353879",
+                "rank": "31"
+            },
+            {
+                "state": "Yobe",
+                "capital": "Damaturu",
+                "population": "2321591",
+                "rank": "32",
+            },
+            {
+                "state": "Taraba",
+                "capital": "Jalingo",
+                "population": "2300736",
+                "rank": "33"
+            },
+            {
+                "state": "Ebonyi",
+                "capital": "Abakaliki",
+                "population": "2173501",
+                "rank": "34"
+            },
+            {
+                "state": "Nasarawa",
+                "capital": "Lafia",
+                "population": "1863275",
+                "rank": "35"
+            },
+            {
+                "state": "Bayelsa",
+                "capital": "Yenagoa",
+                "population": "1703358",
+                "rank": "36"
+            }
+
+        ];
+
+        // a browser function used to call endpoint and it returns a promise ( that something will eventually come back from it)
+        // @blob is a readable stream of data
+        // then() is a function that is used to call the activity of a promise
+        // using the es6  ... spread function
+
+        // fetch(endPoint)
+        //     .then(blob => blob.json())
+        //     .then(data => states.push(...data));
+
+        // filter function
+        function findMatches(wordToMatch, states) {
+            return states.filter(place => {
+                // here we need to figure out if the city or state matches what was searched.
+
+                // to send a parameter as a value into a function.
+
+                const regex = new RegExp(wordToMatch, 'gi');
+                return place.state.match(regex) || place.state.match(regex);
+            });
+        };
+
+        function numbersWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+
+        // join is an array function to turn an array to a string, the default is a comma used for separation.
+
+        function displayMatches() {
+            console.log("There is still so much to learn baby girl so baby steps");
+            // use the value to findmatches
+            const matchArray = findMatches(this.value, states);
+
+            // feed the array to the li elements
+
+            const html = matchArray.map(place => {
+                // highlight the search word
+                const regex = new RegExp(this.value, 'gi');
+                const stateName = place.state.replace(regex, `<span class="hgl"> ${this.value}</span>`);
+                const stateCapital = place.capital.replace(regex, `<span class="hgl"> ${this.value}</span>`);
+
+                return `
+                      <li>
+                            <span class="name"> ${stateName}, ${stateCapital} </span>
+                            <span class="population"> ${numbersWithCommas(place.population)} </span>
+                      </li>
+                    `;
+            }).join('');
+
+            suggestions.innerHTML = html;
+        }
+
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
+
+        searchInput.addEventListener('change', displayMatches);
+        searchInput.addEventListener('keyup', displayMatches);
+        </script>
+    </body>
+
+</html>

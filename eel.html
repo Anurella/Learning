@@ -1,0 +1,320 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the story of an electric eel and learning to use bubbles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Story of an Electric EEL </title>
+        <link rel="author" href="humans.txt">
+        <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            font-size: 12px;
+        }
+
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        main {
+            position: inherit;
+            color: #fff;
+        }
+
+        .top__section {
+
+            position:relative;
+            height: 35vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-image:linear-gradient(to bottom, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1526590947186-27bdb2de3b33?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=802089a779015a4ca7f18d9c66c67332&auto=format&fit=crop&w=771&q=80');
+            background-blend-mode: multiply;
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size: cover;
+
+        }
+
+        /*   .top__section:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }*/
+
+        h3 {
+
+            font-size: 3vw;
+            padding: 2rem 0;
+
+        }
+
+        .bubbles__container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            max-width: 15rem;
+            /* returns to the original (left)*/
+            transform: translateX(-50%);
+            opacity: 0.75;
+            overflow: visible;
+        }
+
+
+        .bubbles {
+
+            width: 100%;
+            height: auto;
+        }
+
+
+        .bubbles circle {
+            stroke: #fff;
+            fill: none;
+        }
+
+
+        .bubbles>g>g:nth-of-type(3n) circle {
+            stroke: #f25a42;
+        }
+
+        .bubbles>g>g:nth-of-type(2n) circle {
+            stroke: #6c3f58;
+        }
+
+        .bubbles>g>g:nth-of-type(4n) circle {
+            stroke: #a490ad;
+        }
+
+        .bubbles__large {
+            overlow: visible;
+        }
+
+        .bubbles__large>g {
+
+            -webkit-transform: translateY(2048px);
+            transform: translateY(2048px);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .bubbles__large g:nth-of-type(1) {
+            -webkit-animation: up 6.5s infinite;
+            animation: up 6.5s infinite;
+        }
+
+
+        .bubbles__large g:nth-of-type(1) g {
+
+            -webkit-transform: translateX(350px);
+            transform: translateX(350px);
+        }
+
+        .bubbles__large g:nth-of-type(1) g circle {
+            -webkit-animation: wobble 3s infinite ease-in-out;
+            animation: wobble 3s infinite ease-in-out;
+        }
+
+
+
+
+        @-webkit-keyframes wobble {
+            33% {
+                -webkit-transform: translateX(-50px);
+                transform: translateX(-50px);
+            }
+
+            66% {
+                -webkit-transform: translateX(50px);
+                transform: translateX(50px);
+            }
+        }
+
+        @keyframes wobble {
+            33% {
+                -webkit-transform: translateX(-50px);
+                transform: translateX(-50px);
+            }
+
+            66% {
+                -webkit-transform: translateX(50px);
+                transform: translateX(50px);
+            }
+        }
+
+        @-webkit-keyframes up {
+            0% {
+                opacity: 0;
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: translateY(-1024px);
+                transform: translateY(-1024px);
+            }
+        }
+
+        @keyframes up {
+            0% {
+                opacity: 0;
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: translateY(-1024px);
+                transform: translateY(-1024px);
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div class="top__section">
+                <div class="bubbles__container">
+                    <svg class="bubbles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701 1024" style="overflow: visible;">
+                        <g class="bubbles__large" stroke-width="7">
+                            <g>
+                                <g transform="translate(10 940)">
+                                    <circle cx="25" cy="25" r="25" />
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(373 940)">
+                                    <circle cx="25" cy="25" r="25" />
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(218 940)">
+                                    <circle cx="25" cy="25" r="25" />
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(621 940)">
+                                    <circle cx="25" cy="25" r="25" />
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(179 940)">
+                                    <circle cx="35" cy="35" r="35" />
+                                </g>
+                            </g>
+                        </g>
+                        <g class="bubbles-medium" stroke-width="5">
+                            <g>
+                                <g transform="translate(10 900)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(50 960)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(110 910)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(110 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(60 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(210 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(300 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(70 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(100 950)">
+                                    <circle cx="15" cy="15" r="15">
+                                </g>
+                            </g>
+                        </g>
+                        <g class="bubbles-small" stroke-width="3">
+                            <g>
+                                <g transform="translate(40 984)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(30 924)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(70 914)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(100 984)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(90 984)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(20 984)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                            <g>
+                                <g transform="translate(33 984)">
+                                    <circle cx="3" cy="3" r="3">
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <h3> Story of the Electric EEL. </h3>
+            </div>
+            <div class="story">
+            </div>
+        </main>
+    </body>
+
+</html>

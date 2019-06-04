@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Day 1- Javascript Drum Kit </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="author" content="Anurella Amaka">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day2.html"> NEXT </a>
+                </div>
+            </header>
+
+            <main>
+                <h6 class="title"> DAY 01 - JAVASCRIPT DRUM KIT </h6>
+                <div class="keys">
+                    <div class="key" data-key="65">
+                        <kbd>A</kbd>
+                        <span class="sound">clap</span>
+                    </div>
+                    <div class="key" data-key="83">
+                        <kbd>S</kbd>
+                        <span class="sound">hihat</span>
+                    </div>
+                    <div class="key" data-key="68">
+                        <kbd>D</kbd>
+                        <span class="sound">kick</span>
+                    </div>
+                    <div class="key" data-key="70">
+                        <kbd>F</kbd>
+                        <span class="sound">openhat</span>
+                    </div>
+                    <div class="key" data-key="71">
+                        <kbd>G</kbd>
+                        <span class="sound">boom</span>
+                    </div>
+                    <div class="key" data-key="72">
+                        <kbd>H</kbd>
+                        <span class="sound">ride</span>
+                    </div>
+                    <div class="key" data-key="74">
+                        <kbd>J</kbd>
+                        <span class="sound">snare</span>
+                    </div>
+                    <div class="key" data-key="75">
+                        <kbd>K</kbd>
+                        <span class="sound">tom</span>
+                    </div>
+                    <div class="key" data-key="76">
+                        <kbd>L</kbd>
+                        <span class="sound">tink</span>
+                    </div>
+                </div>
+                <audio src="audio/clap.wav" data-key="65"></audio>
+                <audio src="audio/hihat.wav" data-key="83"></audio>
+                <audio src="audio/kick.wav" data-key="68"></audio>
+                <audio src="audio/openhat.wav" data-key="70"></audio>
+                <audio src="audio/boom.wav" data-key="71"></audio>
+                <audio src="audio/ride.wav" data-key="72"></audio>
+                <audio src="audio/snare.wav" data-key="74"></audio>
+                <audio src="audio/tom.wav" data-key="75"></audio>
+                <audio src="audio/tink.wav" data-key="76"></audio>
+            </main>
+        </div>
+        <script>
+
+        function playSound(e) {
+            console.log('I am here in play Sound')
+            // using ES6 template literal
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+            if (!audio) return; //stop function
+            audio.currentTime = 0; //rewind to the start.
+            audio.play();
+            // add class playing to the div
+            key.classList.add('playing');
+        };
+
+        function removeTransition(e) {
+
+            // skip the event if it is not transform
+            if (e.propertyName != 'transform') return;
+            // remove the playing class
+            this.classList.remove('playing');
+        };
+
+        // get all keys
+        const keys = document.querySelectorAll('.key');
+        //making use of a transition end event to remove the playing class.
+        // you can not listen to an event for an element in an array by adding the addEventListener directly to the array. but by using a loop
+        // listen for transition end on each key
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+        window.addEventListener('keydown', playSound);
+
+        </script>
+    </body>
+
+</html>

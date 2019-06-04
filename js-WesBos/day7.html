@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> DAY 7 | Array Cardio day 2  20/11/2018 </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="day5">
+        <div class="container">
+            <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS  DAY 7 </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day6.html"> PREV &nbsp;&nbsp;&nbsp; </a>
+                    <a href="day8.html"> NEXT </a>
+                </div>
+            </header>
+            <main>
+                <h4 align="center"> Look into console </h4>
+            </main>
+            <script>
+
+                   //learn about some and every checks
+
+
+                   const people = [
+                         { name: 'Wes', year: 1988},
+                         { name: 'Kait', year: 1986},
+                         { name: 'Irv', year: 1970},
+                         { name: 'Lux', year: 2015}
+
+                   ]
+                    const comments = [
+                        {text: 'Love this!', id: 523423},
+                        {text: 'Super good', id: 823423},
+                        {text: 'You are the best', id: 2039842},
+                        {text: 'Ramen is my fav food ever', id: 123523},
+                        {text: 'Nice Nice Nice!', id: 542328}
+                    ];
+
+                    //some and every checks
+                    // Array.prototype.some() //is at least one person 19
+
+                        const isAdult = people.some(person => ( (new Date()).getFullYear() ) - person.year >= 19
+                        );
+
+                        console.log( {isAdult} );
+
+                    //Array.prototype.every() //is everyone 19
+
+                          const allAdults = people.every(person => ( (new Date()).getFullYear() ) - person.year >= 19
+                        );
+
+                          console.log( { allAdults });
+
+
+
+                          //Array.prototype.find()
+                          //find the comment with ID 823423
+                         const comment = comments.find((comment) => comment.id === 823423);
+                         console.log( comment );
+
+
+                         //Array.prototype.findIndex()
+                         // find the comment with this ID
+                         // delete the comment with the ID of 823423
+
+                         const delComment = comments.findIndex(comment => comment.id === 823423);
+                         comments.splice (delComment);
+
+                         console.table(comments);
+
+
+
+
+            </script>
+    </body>
+
+</html>

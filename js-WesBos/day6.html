@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> DAY 6 | Ajax Type Ahead 7/11/2018 </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="day5">
+        <div class="container">
+            <header>
+                <div class="title">
+                    <h4> JAVASCRIPT30 by WES BOS  DAY 6 </h4>
+                    <p> A free online course taught by the amazing WES BOS, link to <a href="https://javascript30.com/" target="_blank"> Course </a> </p>
+                    <a href="day5.html"> PREV &nbsp;&nbsp;&nbsp; </a>
+                    <a href="day7.html"> NEXT </a>
+                </div>
+            </header>
+            <main>
+                <div class="day6">
+                    <form class="search-form">
+                        <input type="text" class="search" name="" placeholder="City or State">
+                        <ul class="suggestions">
+                            <li> Filter for a city</li>
+                            <li> or a state </li>
+                        </ul>
+                    </form>
+                </div>
+            </main>
+            <script>
+            //get a json file of cities
+            const endPoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+            const cities = [];
+
+            // a browser function used to call endpoint and it returns a promise ( that something will eventually come back from it)
+            // @blob is a readable stream of data
+            // then() is a function that is used to call the activity of a promise
+            // using the es6  ... spread function
+
+            fetch(endPoint)
+                .then(blob => blob.json())
+                .then(data => cities.push(...data));
+
+            // filter function
+            function findMatches(wordToMatch, cities) {
+                return cities.filter(place => {
+                    // here we need to figure out if the city or state matches what was searched.
+
+                    // to send a parameter as a value into a function.
+
+                    const regex = new RegExp(wordToMatch, 'gi');
+                    return place.city.match(regex) || place.city.match(regex);
+                });
+            }
+
+            function numbersWithCommas(x){
+                return x.toString().replace (/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // join is an array function to turn an array to a string, the default is a comma used for separation.
+
+            function displayMatches() {
+                console.log("There is still so much to learn baby girl so baby steps");
+                // use the value to findmatches
+                const matchArray = findMatches(this.value, cities);
+
+                // feed the array to the li elements
+
+                 const html = matchArray.map(place => {
+                         // highlight the search word
+                    const regex = new RegExp(this.value, 'gi');
+                    const cityName = place.city.replace(regex, `<span class="hgl"> ${this.value}</span>`);
+                     const cityState = place.state.replace(regex, `<span class="hgl"> ${this.value}</span>`);
+
+                    return `
+                      <li>
+                            <span class="name"> ${cityName}, ${cityState} </span>
+                            <span class="population"> ${place.population} </span>
+                      </li>
+                    `;
+                 }).join('');
+
+                 suggestions.innerHTML = html;
+            }
+
+            const searchInput = document.querySelector('.search');
+            const suggestions = document.querySelector('.suggestions');
+
+            searchInput.addEventListener('change', displayMatches);
+            searchInput.addEventListener('keyup', displayMatches);
+            </script>
+    </body>
+
+</html>
